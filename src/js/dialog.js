@@ -565,7 +565,7 @@
             isIOS = /iphone|ipod|ipad/gi.test(UA) && !isAndroid,
             isMobile = isAndroid || isIOS,
             platform = isIOS ? 'ios' : (isAndroid ? 'android' : 'default'),
-            isSupportTouch = "ontouchend" in document ? true : false;
+            isSupportTouch = !document.ontouchend;
 
         var reg = isIOS ? (/os [\d._]*/gi):(/android [\d._]*/gi),
             verinfo = UA.match(reg),
